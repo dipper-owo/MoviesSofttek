@@ -55,12 +55,20 @@ dependencies {
 
     val composeBom = platform(libs.compose.boom)
     implementation(composeBom)
-    //implementation(project(":domain"))
-    //implementation(project(":data"))
     implementation(libs.bundles.app.implements)
     kapt(libs.bundles.kapt)
     androidTestImplementation(composeBom)
     androidTestImplementation(libs.bundles.app.androidTest)
     testImplementation(libs.bundles.test)
     debugImplementation(libs.bundles.app.debud.implements)
+
+    implementation(libs.bundles.retrofit2)
+    implementation(libs.bundles.library.implements)
+    androidTestImplementation(libs.bundles.library.androidTest)
+    androidTestImplementation(libs.bundles.retrofit2)
+
+    kaptAndroidTest(libs.bundles.kapt)
+
+    implementation("androidx.room:room-ktx:2.3.0")
+    kapt("androidx.room:room-compiler:2.3.0")
 }
