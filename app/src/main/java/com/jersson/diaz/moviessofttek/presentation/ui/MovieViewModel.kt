@@ -4,11 +4,13 @@ import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.jersson.diaz.moviessofttek.domain.usecase.GetListMoviesUseCase
 import com.jersson.diaz.moviessofttek.presentation.model.UiState
 import com.jersson.diaz.moviessofttek.presentation.ui.navigation.UIEvents
 import com.jersson.diaz.moviessofttek.presentation.model.MoviesState
 import com.jersson.diaz.moviessofttek.presentation.model.MutableUiStateHolder
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.SharedFlow
@@ -19,7 +21,9 @@ private const val ADMIN = "Admin"
 private const val PASSWORD = "Password*123."
 
 @HiltViewModel
-class MovieViewModel @Inject constructor(): ViewModel() {
+class MovieViewModel @Inject constructor(
+    private val getListMoviesUseCase: GetListMoviesUseCase,
+): ViewModel() {
 
 
     private var _uiState = mutableStateOf(MutableUiStateHolder())
@@ -61,59 +65,16 @@ class MovieViewModel @Inject constructor(): ViewModel() {
     }
 
     private fun getData(){
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO)  {
             _uiState.value = uiState.value.copy(
                 currentState = UiState.LOADING
             )
-            delay(3000)
+            val result = getListMoviesUseCase.invoke()
             _state.value = state.value.copy(
-                listMovies = listOf(
-                    MoviesState.Movie(
-                        id = 634492,
-                        posterPath = "/rULWuutDcN5NvtiZi4FRPzRYWSh.jpg",
-                        title = "Madame Web",
-                        voteAverage = 5.521,
-                        releaseDate = "2024-02-14",
-                        synopsis = "Forced to confront revelations about her past, paramedic Cassandra Webb forges a relationship with three young women destined for powerful futures...if they can all survive a deadly present.",
-                    ),
-                    MoviesState.Movie(
-                        id = 634492,
-                        posterPath = "/rULWuutDcN5NvtiZi4FRPzRYWSh.jpg",
-                        title = "Madame Web 2",
-                        voteAverage = 5.521,
-                        releaseDate = "2024-02-14",
-                        synopsis = "Forced to confront revelations about her past, paramedic Cassandra Webb forges a relationship with three young women destined for powerful futures...if they can all survive a deadly present.",
-                    ),
-                    MoviesState.Movie(
-                        id = 634492,
-                        posterPath = "/rULWuutDcN5NvtiZi4FRPzRYWSh.jpg",
-                        title = "Madame Web 3",
-                        voteAverage = 5.521,
-                        releaseDate = "2024-02-14",
-                        synopsis = "Forced to confront revelations about her past, paramedic Cassandra Webb forges a relationship with three young women destined for powerful futures...if they can all survive a deadly present.",
-                    ),
-                    MoviesState.Movie(
-                        id = 634492,
-                        posterPath = "/rULWuutDcN5NvtiZi4FRPzRYWSh.jpg",
-                        title = "Madame Web 4",
-                        voteAverage = 5.521,
-                        releaseDate = "2024-02-14",
-                        synopsis = "Forced to confront revelations about her past, paramedic Cassandra Webb forges a relationship with three young women destined for powerful futures...if they can all survive a deadly present.",
-                    ),
-                    MoviesState.Movie(
-                        id = 634492,
-                        posterPath = "/rULWuutDcN5NvtiZi4FRPzRYWSh.jpg",
-                        title = "Madame Web 5",
-                        voteAverage = 5.521,
-                        releaseDate = "2024-02-14",
-                        synopsis = "Forced to confront revelations about her past, paramedic Cassandra Webb forges a relationship with three young women destined for powerful futures...if they can all survive a deadly present.",
-                    ),
-                )
+                listMovies = result
             )
-            //Success
-            val list = listOf("")
             _uiState.value = uiState.value.copy(
-                currentState = UiState.from(list)
+                currentState = UiState.from(result)
             )
         }
     }

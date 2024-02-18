@@ -69,7 +69,7 @@ fun MoviesItem(
                         maxLines = 1
                     )
                     Text(
-                        text = "${stringResource(id = R.string.calify)} ${movie.voteAverage}",
+                        text = "${stringResource(id = R.string.detail_qualify)} ${movie.voteAverage}",
                         style = movieDetail,
                         maxLines = 1
                     )
