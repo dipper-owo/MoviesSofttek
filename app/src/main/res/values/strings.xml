@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">MoviesSofttek</string>
+    <string name="login_user">Usuario</string>
+    <string name="login_password">Contraseña</string>
+    <string name="login_enter">Ingresar</string>
+    <string name="login_error">Los datos ingresados son invalidos</string>
+    <string name="list_error">Ocurrio un error</string>
+    <string name="list_empty">No se encontraron peliculas</string>
+    <string name="list_our_movies">Nuestras peliculas</string>
+    <string name="detail_qualify">Calificación:</string>
 </resources>
