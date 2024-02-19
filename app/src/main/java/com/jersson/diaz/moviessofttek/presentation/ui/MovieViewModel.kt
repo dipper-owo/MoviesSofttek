@@ -44,7 +44,7 @@ class MovieViewModel @Inject constructor(
                 currentState = UiState.LOADING
             )
             delay(3000)
-            if (user.user != ADMIN && user.password != PASSWORD){
+            if (user.user == ADMIN && user.password == PASSWORD){
                 _events.emit(UIEvents.GoMovies)
                 getData()
             } else{

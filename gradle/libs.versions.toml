@@ -30,6 +30,7 @@ retrofit2 = "2.9.0"
 kotlin-test = "1.8.22"
 mockito = "2.25.0"
 arch-core = "2.2.0"
+room = "2.3.0"
 
 [libraries]
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activity-compose" }
@@ -82,6 +83,8 @@ squareup-retrofit2-gson = { module = "com.squareup.retrofit2:converter-gson", ve
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin-test" }
 mockito = { module = "org.mockito:mockito-core", version.ref = "mockito" }
 arch-core = { module = "androidx.arch.core:core-testing", version.ref = "arch-core" }
+room = { module = "androidx.room:room-ktx", version.ref = "room" }
+room-kapt = { module = "androidx.room:room-compiler", version.ref = "room" }
 
 [bundles]
 app-androidTest = [
@@ -100,6 +103,7 @@ app-androidTest = [
     "squareup-retrofit2",
     "squareup-retrofit2-converter",
     "squareup-retrofit2-gson",
+    "room-kapt",
     "kotlin-test",
     "arch-core",
 ]
@@ -129,6 +133,7 @@ app-implements = [
 ]
 kapt = [
     "google-dagger-compiler",
+    "room-kapt",
 ]
 library-androidTest = [
     "kotlinx-coroutines-test",
@@ -156,6 +161,7 @@ retrofit2 = [
     "squareup-retrofit2",
     "squareup-retrofit2-converter",
     "squareup-retrofit2-gson",
+    "room",
 ]
 test = [
     "junit",
