@@ -1,4 +1,4 @@
-package com.jersson.diaz.moviessofttek.data.movie.remote.model
+package com.jersson.diaz.moviessofttek.data.remote.model
 
 import com.google.gson.annotations.SerializedName
 

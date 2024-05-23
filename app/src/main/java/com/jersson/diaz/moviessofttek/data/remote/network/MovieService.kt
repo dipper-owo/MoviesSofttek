@@ -1,7 +1,7 @@
-package com.jersson.diaz.moviessofttek.data.movie.remote.network
+package com.jersson.diaz.moviessofttek.data.remote.network
 
 import android.util.Log
-import com.jersson.diaz.moviessofttek.data.movie.remote.model.ListMovieResponse
+import com.jersson.diaz.moviessofttek.data.remote.model.ListMovieResponse
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
@@ -9,7 +9,6 @@ import javax.inject.Inject
 class MovieService @Inject constructor(
     private val api: MovieApiClient
 ) {
-
     suspend fun getListMovies(): ListMovieResponse? {
         return withContext(Dispatchers.IO){
             val response = api.getListMovies(API_KEY)

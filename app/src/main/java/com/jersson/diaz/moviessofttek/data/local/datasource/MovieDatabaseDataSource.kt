@@ -1,7 +1,7 @@
-package com.jersson.diaz.moviessofttek.data.movie.local.datasource
+package com.jersson.diaz.moviessofttek.data.local.datasource
 
-import com.jersson.diaz.moviessofttek.data.movie.local.MovieDataBase
-import com.jersson.diaz.moviessofttek.data.movie.local.model.DbMovie
+import com.jersson.diaz.moviessofttek.data.local.MovieDataBase
+import com.jersson.diaz.moviessofttek.data.local.entities.DbMovie
 
 class MovieDatabaseDataSource(
     private val movieDataBase: MovieDataBase

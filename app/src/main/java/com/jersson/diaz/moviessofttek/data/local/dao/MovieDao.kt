@@ -1,10 +1,10 @@
-package com.jersson.diaz.moviessofttek.data.movie.local.dao
+package com.jersson.diaz.moviessofttek.data.local.dao
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.jersson.diaz.moviessofttek.data.movie.local.model.DbMovie
+import com.jersson.diaz.moviessofttek.data.local.entities.DbMovie
 
 @Dao
 interface MovieDao {

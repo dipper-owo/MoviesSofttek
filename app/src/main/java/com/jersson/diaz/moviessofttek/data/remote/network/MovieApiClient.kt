@@ -1,6 +1,6 @@
-package com.jersson.diaz.moviessofttek.data.movie.remote.network
+package com.jersson.diaz.moviessofttek.data.remote.network
 
-import com.jersson.diaz.moviessofttek.data.movie.remote.model.ListMovieResponse
+import com.jersson.diaz.moviessofttek.data.remote.model.ListMovieResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query

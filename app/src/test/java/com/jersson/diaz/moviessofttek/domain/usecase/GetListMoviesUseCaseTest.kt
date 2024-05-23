@@ -1,6 +1,6 @@
 package com.jersson.diaz.moviessofttek.domain.usecase
 
-import com.jersson.diaz.moviessofttek.data.movie.remote.MovieRemoteRepository
+import com.jersson.diaz.moviessofttek.data.remote.MovieRemoteRepository
 import com.jersson.diaz.moviessofttek.domain.repository.IMovieRepository
 import com.jersson.diaz.moviessofttek.presentation.model.MoviesState
 import io.mockk.MockKAnnotations

@@ -1,6 +1,6 @@
-package com.jersson.diaz.moviessofttek.data.movie.local.model.mapper
+package com.jersson.diaz.moviessofttek.data.local.entities.mapper
 
-import com.jersson.diaz.moviessofttek.data.movie.local.model.DbMovie
+import com.jersson.diaz.moviessofttek.data.local.entities.DbMovie
 import com.jersson.diaz.moviessofttek.presentation.model.MoviesState
 
 fun List<DbMovie>.toListMovie(): List<MoviesState.Movie> = this.map { it.toMovie() }

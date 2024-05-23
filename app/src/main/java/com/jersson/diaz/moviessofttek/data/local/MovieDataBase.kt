@@ -1,9 +1,9 @@
-package com.jersson.diaz.moviessofttek.data.movie.local
+package com.jersson.diaz.moviessofttek.data.local
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import com.jersson.diaz.moviessofttek.data.movie.local.dao.MovieDao
-import com.jersson.diaz.moviessofttek.data.movie.local.model.DbMovie
+import com.jersson.diaz.moviessofttek.data.local.dao.MovieDao
+import com.jersson.diaz.moviessofttek.data.local.entities.DbMovie
 
 @Database(
     entities =[

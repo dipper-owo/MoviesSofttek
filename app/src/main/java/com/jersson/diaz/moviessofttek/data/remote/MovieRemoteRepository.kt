@@ -1,8 +1,8 @@
-package com.jersson.diaz.moviessofttek.data.movie.remote
+package com.jersson.diaz.moviessofttek.data.remote
 
-import com.jersson.diaz.moviessofttek.data.movie.remote.model.mapper.toListMovie
+import com.jersson.diaz.moviessofttek.data.remote.model.mapper.toListMovie
 import com.jersson.diaz.moviessofttek.presentation.model.MoviesState
-import com.jersson.diaz.moviessofttek.data.movie.remote.network.MovieService
+import com.jersson.diaz.moviessofttek.data.remote.network.MovieService
 import javax.inject.Inject
 
 class MovieRemoteRepository @Inject constructor(

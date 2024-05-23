@@ -1,4 +1,4 @@
-package com.jersson.diaz.moviessofttek.data.movie.local.model
+package com.jersson.diaz.moviessofttek.data.local.entities
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
